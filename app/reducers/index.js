@@ -4,6 +4,8 @@ import topic from 'reducers/topic';
 import message from 'reducers/message';
 import { routerReducer as routing } from 'react-router-redux';
 import * as types from 'types';
+import destination from 'destinations/reducer';
+
 
 const isFetching = ( state = false, action ) => {
   switch (action.type) {
@@ -24,7 +26,8 @@ const rootReducer = combineReducers({
   topic,
   user,
   message,
-  routing
+  routing,
+  destination
 });
 
 export default rootReducer;

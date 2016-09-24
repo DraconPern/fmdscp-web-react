@@ -4,6 +4,7 @@
 import passport from 'passport';
 import unsupportedMessage from '../db/unsupportedMessage';
 import { controllers, passport as passportConfig } from '../db';
+import destinations from '../destinations';
 
 const usersController = controllers && controllers.users;
 const topicsController = controllers && controllers.topics;
@@ -52,4 +53,6 @@ export default (app) => {
   } else {
     console.warn(unsupportedMessage('topics routes'));
   }
+
+  app.use('/api', destinations);
 };
